@@ -1,0 +1,11 @@
+<nav class="navbar">
+  <app-logo class="logo-container"></app-logo>
+  <app-menu-public
+    class="menu-container"
+    *ngIf="!authService.isLogged() || authService.getSpinnerState()"
+  ></app-menu-public>
+  <app-menu-private
+    class="menu-container"
+    *ngIf="authService.isLogged() && !authService.getSpinnerState()"
+  ></app-menu-private>
+</nav>

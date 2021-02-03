@@ -1,0 +1,42 @@
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  width: max-content;
+  margin: 0;
+  margin-right: auto;
+  list-style: none;
+}
+
+li {
+  margin-right: 10px;
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.selected {
+  background-color: #f37d93;
+}
+
+a {
+  &:hover {
+    background-color: #fff;
+  }
+}
+
+.user-login-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: max-content;
+}
+
+.user-name {
+  margin-right: 20px;
+}

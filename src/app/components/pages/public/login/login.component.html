@@ -1,0 +1,73 @@
+<div class="content">
+  <h1 class="heading">User login</h1>
+  <mat-card
+    *ngIf="authService.getSpinnerState()"
+    class="card spinner-container form-container"
+  >
+    <mat-spinner></mat-spinner>
+  </mat-card>
+  <form
+    *ngIf="!authService.getSpinnerState()"
+    #loginForm="ngForm"
+    class="form-container"
+  >
+    <mat-card class="card flex-container">
+      <p *ngIf="loginDataError" class="error-msg">
+        Incorrect password or username
+      </p>
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input
+          matInput
+          type="text"
+          name="username"
+          placeholder="Type your Username"
+          required
+          minlength="5"
+          ngModel
+          #username="ngModel"
+          (blur)="updateUsername($event.target.value)"
+        />
+      </mat-form-field>
+      <div *ngIf="username.invalid && username.touched">
+        <p *ngIf="username.errors.required" class="error-msg">
+          Required field
+        </p>
+        <p *ngIf="username.errors.minlength" class="error-msg">
+          Type at least 5 characters
+        </p>
+      </div>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          type="password"
+          name="password"
+          placeholder="Type your password"
+          required
+          minlength="4"
+          ngModel
+          #password="ngModel"
+          (blur)="updatePassword($event.target.value)"
+        />
+      </mat-form-field>
+      <div *ngIf="password.invalid && password.touched">
+        <p *ngIf="password.errors.required" class="error-msg">
+          Required field
+        </p>
+        <p *ngIf="password.errors.minlength" class="error-msg">
+          Type at least 4 characters
+        </p>
+      </div>
+    </mat-card>
+    <button
+      mat-raised-button
+      class="submit-btn"
+      color="primary"
+      [disabled]="loginForm.invalid"
+      (click)="handleSubmit($event)"
+    >
+      Login
+    </button>
+  </form>
+</div>

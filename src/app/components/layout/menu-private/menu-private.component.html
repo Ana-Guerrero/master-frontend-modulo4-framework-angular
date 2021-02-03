@@ -1,0 +1,27 @@
+<div class="menu-container">
+  <ul class="list">
+    <li>
+      <a mat-button routerLinkActive="selected" routerLink="/dashboard"
+        >Dashboard</a
+      >
+    </li>
+    <li>
+      <a mat-button routerLinkActive="selected" routerLink="/profile"
+        >Profile</a
+      >
+    </li>
+    <li>
+      <a mat-button routerLinkActive="selected" routerLink="/rotate">Rotate</a>
+    </li>
+
+    <li>
+      <a mat-button routerLinkActive="selected" routerLink="/gallery"
+        >Gallery</a
+      >
+    </li>
+  </ul>
+  <div class="user-login-container">
+    <span class="user-name">Hello, {{ authService.getUsername() }}</span>
+    <button mat-flat-button (click)="handleLogOut()">Log out</button>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+.content {
+  min-height: calc(100vh - 82px - 132px - 40px);
+  padding-top: 40px;
+  position: relative;
+}
+
+.heading {
+  width: max-content;
+  margin: 0 auto;
+  padding-bottom: 6px;
+  color: #3faab5;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 200;
+  border-bottom: 1px solid #424242;
+}
+
+.form-container {
+  margin: 0;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  -ms-transform: translate(-50%);
+  transform: translate(-50%);
+}
+
+.card {
+  width: max-content;
+  min-width: 220px;
+  margin: 20px auto 0 auto;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.submit-btn {
+  display: block;
+  width: 100px;
+  margin: 30px auto 0 auto;
+}
+
+.error-msg {
+  padding: 3px;
+  text-align: center;
+  color: #ff5252;
+  border: 1px solid #ff5252;
+  border-radius: 5px;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+}
